@@ -1,5 +1,9 @@
 import * as express from 'express';
-import * as express-graphql from 'express-graphql';
+import * as graphqlHTTP from 'express-graphql';
+import { graphqlSchema } from './schema'
 var app = express();
-// app.use('/graphql',)
+app.use('/graphql', graphqlHTTP({
+  schema: graphqlSchema,
+  graphiql: true
+}))
 app.listen(8080);
