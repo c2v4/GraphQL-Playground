@@ -1,0 +1,29 @@
+{
+  "name": "GraphQL-Playground",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/c2v4/GraphQL-Playground.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/c2v4/GraphQL-Playground/issues"
+  },
+  "homepage": "https://github.com/c2v4/GraphQL-Playground#readme",
+  "dependencies": {
+    "express": "^4.15.4",
+    "express-graphql": "^0.6.11"
+  },
+  "devDependencies": {
+    "@types/express": "^4.0.37",
+    "@types/express-graphql": "0.0.34",
+    "@types/node": "^8.0.28"
+  }
+}
