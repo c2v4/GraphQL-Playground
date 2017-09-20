@@ -1,4 +1,4 @@
-#GraphQL Playground
+# GraphQL Playground
 
 ## Summary
 This is a playground project to check how powerful GraphQL is.
@@ -19,7 +19,33 @@ The following npm global packets have to be installed:
 1. Install all needed node modules (`npm install`)
 2. Run (`npm start`)
 3. Open <http://localhost:8080/graphql> in browser
-## Example query
+## Usage
+GraphiQL (Web Interface) will provide autocompletion. Current schema:
+`{
+   country(name: string) {
+     name
+     capital
+     region
+     timezones
+     currencies {
+       name
+       code
+       symbol
+     }
+     languages
+     regionalBlocs {
+       name
+       acronym
+     }
+     neighbors {
+       ...
+     }
+   }
+ }`
+ 
+`neighbors` property has the same schema as country, therefore the same properties can be queried.
+ 
+ ### Sample query
 `query {
    country(name: "poland") {
      name
