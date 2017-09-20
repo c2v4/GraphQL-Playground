@@ -1,15 +1,24 @@
-import { GraphQLSchema,GraphQLFieldConfigMap,Thunk, GraphQLFieldConfig,GraphQLScalarTypeConfig, GraphQLObjectType, GraphQLScalarType, GraphQLObjectTypeConfig } from 'graphql'
+import {
+    GraphQLSchema,
+    GraphQLObjectType, GraphQLString, GraphQLFieldConfig
+} from "graphql";
+
+const countrySchema: GraphQLFieldConfig<any, any> = {
+    type: new GraphQLObjectType({
+        name: "subtype",
+        fields: () => ({
+            name: {
+                type: GraphQLString
+            }
+        })
+    })
+};
 
 export const graphqlSchema = new GraphQLSchema({
-  query: new GraphQLObjectType(<GraphQLObjectTypeConfig<any, any>>{
-    name: 'Asd',
-    fields: <Thunk<GraphQLFieldConfigMap<any, any>>> {
-      asd: <GraphQLFieldConfig<any,any>>{
-        type: new GraphQLScalarType(<GraphQLScalarTypeConfig<any,any>>{
-          name: 'minorAsd',
-          serialize: ()=>null
-        })
-      }
-    }
-  })
+    query: new GraphQLObjectType({
+        name: "Query",
+        fields: {
+            country: countrySchema
+        }
+    })
 });
